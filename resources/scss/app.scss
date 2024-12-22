@@ -1,0 +1,130 @@
+// resources/scss/app.scss
+
+// Import any external stylesheets (e.g., Bootstrap, etc.)
+@import 'bootstrap';
+
+// Custom styles
+body {
+    margin: 0; // Removed the top margin to fix space above navbar
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto; // Added top margin for padding around the main content
+    padding: 15px; // Ensure proper padding inside the container
+    background-color: #fff; // Optional: makes content distinct from the background
+    border-radius: 8px; // Optional: adds rounded corners for aesthetics
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional: subtle shadow for better visuals
+}
+
+.navbar {
+    position: fixed; // Ensures navbar remains fixed at the top
+    width: 100%; // Ensures it spans the full width
+    top: 0;
+    left: 0;
+    right:0; // Aligns it to the top
+    z-index: 10; // Ensures it stays above other elements
+    background-color: #007bff;
+
+    .nav-link {
+        color: #fff; // White text for links
+        &:hover {
+            color: #dcdcdc; // Lighter shade on hover
+        }
+    }
+}
+
+// Table Styles
+.table-container {
+    margin: 20px auto;
+    max-width: 90%;
+    font-family: Arial, sans-serif;
+
+    h1 {
+        text-align: center;
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: #ffffff;
+        background-color: #007bff;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .success-message {
+        color: #28a745;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #343a40;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        tr {
+            &:hover {
+                background-color: #e9ecef;
+            }
+        }
+
+        td {
+            font-size: 14px;
+            color: #212529;
+
+            a {
+                background-color: #007bff;
+                color: #ffffff;
+                margin-right: 10px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            button {
+                color: #ffffff;
+                background-color: #dc3545;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #bd2130;
+                }
+            }
+        }
+    }
+}
