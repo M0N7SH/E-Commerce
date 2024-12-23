@@ -1,42 +1,138 @@
 // resources/scss/app.scss
 
-// Import any external stylesheets (e.g., Bootstrap, etc.)
+// Import Bootstrap CSS
 @import 'bootstrap';
 
 // Custom styles
 body {
-    margin: 0; // Removed the top margin to fix space above navbar
+    margin: 0; // Remove the default margin to fix space above navbar
     padding: 40px;
-    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
 }
 
 h1 {
     color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .container {
     max-width: 1200px;
     margin: 20px auto; // Added top margin for padding around the main content
-    padding: 15px; // Ensure proper padding inside the container
+    padding: 25px; // Ensure proper padding inside the container
     background-color: #fff; // Optional: makes content distinct from the background
-    border-radius: 8px; // Optional: adds rounded corners for aesthetics
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional: subtle shadow for better visuals
+    border-radius: 10px; // Rounded corners for aesthetics
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for better visuals
 }
 
+// Navbar Styles
 .navbar {
-    position: fixed; // Ensures navbar remains fixed at the top
-    width: 100%; // Ensures it spans the full width
+    position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    right:0; // Aligns it to the top
-    z-index: 10; // Ensures it stays above other elements
-    background-color: #007bff;
+    z-index: 10;
+    background-color: #007bff; // Desired navbar background color
+
+    .navbar-brand {
+        color: white; // Ensure the brand text is visible
+        font-size: 1.6rem; // Make the brand name larger
+        font-weight: bold;
+        &:hover {
+            color: #dcdcdc; // Lighter color on hover
+        }
+    }
 
     .nav-link {
-        color: #fff; // White text for links
+        color: white; // Set link color to white
+        font-size: 1rem; // Adjust size for better readability
         &:hover {
-            color: #dcdcdc; // Lighter shade on hover
+            color: #dcdcdc; // Lighter color on hover
+        }
+    }
+}
+
+// Additional Navbar styles
+.navbar-nav {
+    margin-left: auto; // Align links to the right
+}
+
+.nav-link {
+    color: white; // Set link color to white
+    &:hover {
+        color: #dcdcdc; // Lighter color on hover
+    }
+}
+
+// Card Styles for Product Display
+.card {
+    border: none;
+    border-radius: 8px; // Rounded corners for card
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Card shadow effect
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; // Smooth transition on hover
+
+    &:hover {
+        transform: scale(1.05); // Slightly enlarge the card on hover
+    }
+
+    .card-img-top {
+        border-radius: 8px 8px 0 0; // Rounded top corners
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+
+        .card-title {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            width: 100%;
+            margin: 5px 0;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border: none;
         }
     }
 }
@@ -45,7 +141,7 @@ h1 {
 .table-container {
     margin: 20px auto;
     max-width: 90%;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 
     h1 {
         text-align: center;

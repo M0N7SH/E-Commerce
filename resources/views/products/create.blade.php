@@ -4,6 +4,25 @@
 <head>
     <title>Add Product</title>
 </head>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SimpleCart</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/home') }}" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/products') }}" style="color: white;">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/cart') }}" style="color: white;">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 <body>
     <h1>Add Product</h1>
     <form action="{{ route('products.store') }}" method="POST">

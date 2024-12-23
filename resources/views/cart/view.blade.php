@@ -1,7 +1,24 @@
 @extends('layouts.app')
 @vite('resources/scss/app.scss')
 @section('title', 'Your Cart')
-
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SimpleCart</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/home') }}" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/products') }}" style="color: white;">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/cart') }}" style="color: white;">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 @section('content')
     <div class="container">
         <h2>Your Shopping Cart</h2>

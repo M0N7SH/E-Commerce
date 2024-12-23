@@ -17,14 +17,17 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-})->middleware('guest'); // Ensure this route is only available to guests (unauthenticated users)
+})->middleware('guest'); // This route should be for guests only (unauthenticated users)
 
 // Routes that require the user to be authenticated
 Route::middleware(['auth', 'verified'])->group(function () {
 
+    // Redirect authenticated users to the home page or dashboard
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
     // Dashboard Route
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return redirect()->route('home'); // Redirect to the home route
     })->name('dashboard');
 
     // Profile Routes
@@ -49,9 +52,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Product Routes
     Route::resource('products', ProductController::class);
-
-    // Home Route (only accessible if authenticated)
-    Route::get('/', [HomeController::class, 'index']);
 });
 
 // Include the authentication routes (login, register, etc.)

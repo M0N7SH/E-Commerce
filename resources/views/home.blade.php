@@ -2,8 +2,29 @@
 
 @section('title', 'Home')
 @vite('resources/scss/app.scss')
+
 @section('content')
-    <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SimpleCart</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/home') }}" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/products') }}" style="color: white;">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/cart') }}" style="color: white;">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 70px;"> <!-- Added margin to avoid overlap with fixed navbar -->
         <h1>Welcome to SimpleCart</h1>
         
         <!-- Display Product List -->
